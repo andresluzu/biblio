@@ -9,7 +9,7 @@
 </head>
 <body>
 	
-	<h1>Ups algo ha salido mal !!</h1>
+	<h1><s:text name="error.title"></s:text></h1>
 	
 	<h3>Exception:</h3>
     <s:property value="exception"/>

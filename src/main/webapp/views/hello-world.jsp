@@ -9,13 +9,16 @@
 </head>
 <body>
 	<s:form action="hello-world">
-		<s:textfield name="name" key="Nombre"/>
+		<s:textfield name="name" key="label.name"/>
+		<s:radio name="request_locale" key="label.language" 
+			list="languages"/>
 		<s:submit></s:submit>
 	</s:form>
 	
 	<br>
 	<b>
-		Hola: <s:property value="name"/>
+		<s:property value="greeting"/>
 	</b>
+	
 </body>
 </html>
