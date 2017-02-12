@@ -33,7 +33,8 @@ public class HelloWorld extends ActionSupport implements Preparable {
 			greeting = getText("message.hello") + ": " + name;
 		}
 		
-		return super.execute();
+		System.out.println("Ejecución de la acción");
+		return SUCCESS;
 	}
 
 	public String getName() {

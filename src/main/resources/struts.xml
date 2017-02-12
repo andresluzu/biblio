@@ -6,9 +6,21 @@
 
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
 
 	<package name="default" namespace="/" extends="struts-default">
-
+	
+		<interceptors>
+			<interceptor name="logging" class="com.biblio.interceptors.LoggingInterceptor"/>
+			<interceptor-stack name="customStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="logging"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="customStack"/>
+	
 		<default-action-ref name="index" />
 
 		<global-results>
@@ -19,7 +31,7 @@
 			<exception-mapping exception="java.lang.Exception"
 				result="error" />
 		</global-exception-mappings>
-
+		
 		<action name="index">
 			<result>/views/index.jsp</result>
 		</action>
