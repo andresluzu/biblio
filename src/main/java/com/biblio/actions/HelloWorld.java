@@ -9,6 +9,9 @@ public class HelloWorld extends ActionSupport {
 	
 	@Override
 	public String execute() throws Exception {
+		if(name != null && name.length() > 10){
+			throw new Exception("El nombre excede el límite máximo");
+		}
 		return SUCCESS;
 	}
 
