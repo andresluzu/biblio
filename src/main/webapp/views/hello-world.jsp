@@ -10,7 +10,7 @@
 <body>
 	<s:form action="hello-world">
 		<s:textfield name="name" key="label.name"/>
-		<s:radio name="request_locale" key="label.language" 
+		<s:radio name="request_locale" key="label.request_locale" 
 			list="languages"/>
 		<s:submit></s:submit>
 	</s:form>

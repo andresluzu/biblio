@@ -24,8 +24,13 @@
 			<result>/views/index.jsp</result>
 		</action>
 		
+		<action name="hello-form" class="com.biblio.actions.HelloForm">
+			<result name="success">/views/hello-world.jsp</result>
+		</action>
+		
 		<action name="hello-world" class="com.biblio.actions.HelloWorld">
 			<result name="success">/views/hello-world.jsp</result>
+			<result name="input">/views/hello-world.jsp</result>
 		</action>
 		
 		<action name="*" class="com.opensymphony.xwork2.ActionSupport">
