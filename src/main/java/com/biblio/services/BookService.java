@@ -21,4 +21,8 @@ public class BookService {
 	public Collection<Book> listBooks(){
 		return books.values();
 	}
+	
+	public Book findBookById(Long id){
+		return books.get(id);
+	}
 }

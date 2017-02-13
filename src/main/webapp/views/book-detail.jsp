@@ -8,40 +8,46 @@
 <title>Biblioteca Struts2</title>
 </head>
 <body>
+	<s:if test="hasActionErrors()">
+		<s:actionerror/>
+	</s:if>
+	<s:else>
 	<table>
 		<caption>
-			<strong><s:text name="message.booksList"/></strong>
+			<strong><s:text name="message.bookDetail"/></strong>
 		</caption>
-		<thead>
+		<tbody>
 			<tr>
 				<th><s:text name="label.id"/></th>
-				<th><s:text name="label.title"/></th>
-				<th><s:text name="label.description"/></th>
-				<th><s:text name="label.author"/></th>
-				<th><s:text name="label.year"/></th>
-				<th><s:text name="label.language"/></th>
+				<td><s:property value="book.id"/></td>
 			</tr>
-		</thead>
-		<tbody>
-			<s:iterator value="books">
-				<tr>
-					<td><s:property value="id"/></td>
-					<td>
-						<s:url var="urlDetail" action="view-book-detail">
-							<s:param name="bookId" value="%{id}"/>
-						</s:url>
-						<s:a href="%{urlDetail}">
-							<s:property value="title"/>		
-						</s:a>
-					</td>
-					<td><s:property value="description"/></td>
-					<td><s:property value="author"/></td>
-					<td><s:property value="year"/></td>
-					<td><s:property value="%{getText('label.'+ language.name())}"/></td>
-				</tr>
-			</s:iterator>
+			<tr>
+				<th><s:text name="label.title"/></th>
+				<td><s:property value="book.title"/></td>
+			</tr>
+			<tr>
+				<th><s:text name="label.description"/></th>
+				<td><s:property value="book.description"/></td>
+			</tr>
+			<tr>
+				<th><s:text name="label.author"/></th>
+				<td><s:property value="book.author"/></td>
+			</tr>
+			<tr>
+				<th><s:text name="label.year"/></th>
+				<td><s:property value="book.year"/></td>
+			</tr>
+			<tr>
+				<th><s:text name="label.language"/></th>
+				<td><s:property value="%{getText('label.'+ book.language.name())}"/></td>
+			</tr>
 		</tbody>
 	</table>
+	</s:else>
+	<p>
+		<s:url var="urlBack" action="list-books"/>
+		<s:a href="%{urlBack}"><s:text name="button.back"/></s:a>
+	</p>
 	
 </body>
 </html>
