@@ -1,0 +1,48 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="title">
+        <field-validator type="requiredstring">
+            <message key="validation.requiredString"/>
+        </field-validator>
+        <field-validator type="stringlength">
+    		<param name="minLength">3</param>
+          	<param name="maxLength">50</param>
+    		<message key="validation.stringLength"/>
+    	</field-validator>
+    </field>
+    <field name="description">
+    	<field-validator type="stringlength">
+    		<param name="minLength">3</param>
+          	<param name="maxLength">150</param>
+    		<message key="validation.stringLength"/>
+    	</field-validator>
+    </field>
+    <field name="author">
+        <field-validator type="requiredstring">
+            <message key="validation.requiredString"/>
+        </field-validator>
+        <field-validator type="stringlength">
+    		<param name="minLength">3</param>
+          	<param name="maxLength">50</param>
+    		<message key="validation.stringLength"/>
+    	</field-validator>
+    </field>
+    <field name="year">
+    	<field-validator type="required">
+    		<message key="validation.required"/>
+    	</field-validator>
+    	<field-validator type="int">
+    		<param name="min">0</param>
+    		<param name="max">2017</param>
+    		<message key="validation.int"/>
+    	</field-validator>
+    </field>
+    <field name="language">
+    	<field-validator type="required">
+    		<message key="validation.required"/>
+    	</field-validator>
+    </field>
+</validators>

@@ -62,6 +62,15 @@
 			<result name="input">/views/book-detail.jsp</result>
 		</action>
 		
+		<action name="view-book-form" class="com.biblio.actions.ViewBookForm">
+			<result>/views/book-form.jsp</result>
+		</action>
+		
+		<action name="save-book" class="com.biblio.actions.SaveBook">
+			<result name="success">/views/book-detail.jsp</result>
+			<result name="input">/views/book-form.jsp</result>
+		</action>
+		
 		<action name="*" class="com.opensymphony.xwork2.ActionSupport">
             <result>/views/{1}.jsp</result>
         </action>

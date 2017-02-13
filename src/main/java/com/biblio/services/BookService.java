@@ -25,4 +25,15 @@ public class BookService {
 	public Book findBookById(Long id){
 		return books.get(id);
 	}
+	
+	public Book saveBook(Book book){
+		if(book.getId() != null && books.containsKey(book.getId())){
+			books.put(book.getId(), book);
+		}else{
+			Long id = new Long(books.size() + 1);
+			book.setId(id);
+			books.put(id, book);
+		}
+		return book;
+	}
 }
