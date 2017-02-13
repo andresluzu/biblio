@@ -47,10 +47,14 @@
 		
 		<action name="hello-json" class="com.biblio.actions.HelloWorld">
 			<result name="input" type="json"/>
-
 		</action>
+		
 		<action name="view-code">
 			<result name="success" type="plainText">/views/hello-world.jsp</result>
+		</action>
+		
+		<action name="list-books" class="com.biblio.actions.ListBooks">
+			<result name="success">/views/book-list.jsp</result>
 		</action>
 		
 		<action name="*" class="com.opensymphony.xwork2.ActionSupport">
