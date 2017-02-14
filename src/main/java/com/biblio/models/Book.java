@@ -1,12 +1,23 @@
 package com.biblio.models;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String title;
 	private String description;
 	private String author;
 	private Integer year;
+	
+	@Enumerated(EnumType.STRING)
 	private Language language;
 	
 	public Book() {
