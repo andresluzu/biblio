@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class ViewBookForm extends ActionSupport {
 
-	private BookService bookService = new BookService();
+	private final BookService bookService;
 	
 	//Parámetros entrada
 	private Long bookId;
@@ -18,6 +18,11 @@ public class ViewBookForm extends ActionSupport {
 	private Book book;
 	private Language[] languages = Language.values();
 	
+	public ViewBookForm(BookService bookService) {
+		super();
+		this.bookService = bookService;
+	}
+
 	@Override
 	public String execute() throws Exception {
 		if(bookId != null){

@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class ViewBookDetail extends ActionSupport {
 
-	private BookService bookService = new BookService();
+	private final BookService bookService;
 	
 	//Parámetros entrada
 	private Long bookId;
@@ -15,6 +15,11 @@ public class ViewBookDetail extends ActionSupport {
 	//Parámetros de salida
 	private Book book;
 	
+	public ViewBookDetail(BookService bookService) {
+		super();
+		this.bookService = bookService;
+	}
+
 	@Override
 	public void validate() {
 		if(bookId == null){

@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.Preparable;
 @SuppressWarnings("serial")
 public class SaveBook extends ActionSupport implements Preparable{
 
-	private BookService bookService = new BookService();
+	private final BookService bookService;
 	
 	//Parámetros entrada
 	private Long id;
@@ -24,6 +24,11 @@ public class SaveBook extends ActionSupport implements Preparable{
 	private Book book;
 	private Language[] languages = Language.values();
 	
+	public SaveBook(BookService bookService) {
+		super();
+		this.bookService = bookService;
+	}
+
 	@Override
 	public void prepare() throws Exception {
 		Long bookId =  ActionContext.getContext().getSession().containsKey("bookId") ? 

@@ -9,9 +9,14 @@ import com.opensymphony.xwork2.ActionSupport;
 @SuppressWarnings("serial")
 public class ListBooks extends ActionSupport {
 
-	private BookService bookService = new BookService();
+	private final BookService bookService;
 	private Collection<Book> books;
-	
+
+	public ListBooks(BookService bookService) {
+		super();
+		this.bookService = bookService;
+	}
+
 	@Override
 	public String execute() throws Exception {
 		books = bookService.listBooks();
